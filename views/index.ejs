@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/../css/style.css">
+    <link rel="stylesheet" href="/../css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../fa/web-fonts-with-css/css/fontawesome-all.css">
+    <title>Chat App with socket.io</title>
+</head>
+<body>
+<script src="/../js/socket.io.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff1744;">
+    <a class="navbar-brand" href="#">
+    <img src="/../img/cht.png" width="90" height="40" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tentang</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+
+<div class="modal" id="memberModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+<div class="container" id="card_username">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Hai! Selamat Datang</h4>
+                  <div class="alert alert-danger" id="alert" role="alert">
+                    Ehhh! tampaknya kamu lupa memasukan sebuah nama, ini gunanya agar memudahkan mereka dapat mengenali kamu :D</div>
+                  <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-8 mb-3">
+                            <input class="form-control" type="text" placeholder="Username" id="username" maxlength="
+                            12">
+                        </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary mb-3" id="send_username" type="button" data-dismiss="modal">Mulai</button>
+                  <!-- <a href="#" class="btn btn-primary mb-3" id="send_username" data-dismiss="modal">Mulai</a> -->
+                  <p class="card-text">Beri sebuah nama agar mereka mengetahui kamu siapa! dengan begitu kamu terhubung dengan room chat yang berisi pengguna lainya loh! happy new meet people and have fun!</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="card_chat">
+    <div class="row justfy-content-center">
+        <div class="col-md-12">
+            <div  id="chatroom" style="overflow-y: scroll; height:500px;">
+                <section id="feedback"></section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="input-group mb-3">
+                    <textarea class="form-control" id="message" rows="2" style="resize:none" placeholder="ketikan sebuah pesan"></textarea>
+                    <div class="input-group-append">
+                    <input class="btn btn-outline-dark" id="send_message" value="Kirim" type="button">
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <th><i class="far fa-user"></i></th>
+    <th><i class="far fa-paper-plane"></i></th>
+    <th><i class="fas fa-map-marker"></i></th> -->
+
+<!-- <nav>
+    <div class="container">
+        <span id="title">CHT.</span>
+        <span id="input-user"> 
+        <input type="text" id="username">
+        <input type="button" id="send_username" value="SET USERNAME"></span>
+    </div>
+</nav>
+
+<section id="chat">
+    <div class="container">
+        <div id="chatroom">
+        </div>
+    </div>
+</section>
+
+<section id="typing">
+    <div class="container">
+        <span id="box"><input id="message"></span>
+        <span id="send"><input type="button" placeholder="kirim"  id="send_message" value="Kirim"></span>
+    </div>
+</section> -->
+
+<!-- <section id="header">
+    <div class="container">
+        <div class="title">
+            <h1>Cht.</h1>
+        </div>
+        <div class="form-user">
+            <div class="box">
+                <form>
+                    <input type="text" id="username">
+                    <input type="button" id="send_username" value="Username">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="chat">
+    <div class="container">
+        <div id="chatroom">
+           
+        </div>
+    </div>
+</section>
+
+<section id="send">
+    <div class="container">
+        <div class="form-send">
+            <div class="box">
+                <input id="message">
+                <input type="button" placeholder="kirim"  id="send_message" value="Kirim">
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<script src="/../js/jquery.js"></script>
+<script src="/../js/bootstrap.min.js"></script>
+<script src="/../js/chat.js"></script>
+</body>
+</html>
